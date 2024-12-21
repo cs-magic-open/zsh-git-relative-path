@@ -1,4 +1,8 @@
-# zsh-git-relative-path
+# Zsh Git Relative Path Plugin
+
+<p align="center">
+  <img src="logo.v4.svg" width="200" height="200" alt="Zsh Git Relative Path Plugin Logo">
+</p>
 
 A ZSH plugin that shows your current path relative to the git project root in your prompt.
 

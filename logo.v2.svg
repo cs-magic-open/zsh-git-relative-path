@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="200" height="200" viewBox="0 0 200 200" version="1.1" xmlns="http://www.w3.org/2000/svg">
+    <!-- 背景渐变 -->
+    <defs>
+        <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#1a1a1a;stop-opacity:1" />
+            <stop offset="100%" style="stop-color:#2d333b;stop-opacity:1" />
+        </linearGradient>
+    </defs>
+    
+    <!-- 终端窗口 - 更现代的设计 -->
+    <rect x="30" y="50" width="140" height="100" rx="8" 
+          fill="url(#bgGradient)"
+          filter="drop-shadow(0 4px 6px rgba(0, 0, 0, 0.1))" />
+    
+    <!-- 装饰线条 -->
+    <path d="M30 70 L170 70" stroke="#363b42" stroke-width="1"/>
+    
+    <!-- 路径文本 - 使用更优雅的排版 -->
+    <text font-family="SF Mono, Monaco, monospace" font-size="16">
+        <!-- 长路径 -->
+        <tspan x="45" y="95" fill="#666d76">~/long/path</tspan>
+        <!-- 箭头 -->
+        <tspan x="130" y="95" fill="#58A6FF">⟶</tspan>
+        <!-- 相对路径 -->
+        <tspan x="45" y="125" fill="#58A6FF">./project</tspan>
+        <!-- Git 标记 -->
+        <tspan x="115" y="125" fill="#3fb950">✓</tspan>
+    </text>
+    
+    <!-- 点缀元素 -->
+    <circle cx="42" cy="62" r="2.5" fill="#ff5f57"/>
+    <circle cx="52" cy="62" r="2.5" fill="#febc2e"/>
+    <circle cx="62" cy="62" r="2.5" fill="#28c840"/>
+</svg>

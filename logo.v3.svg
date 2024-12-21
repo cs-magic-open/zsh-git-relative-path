@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="200" height="200" viewBox="0 0 200 200" version="1.1" xmlns="http://www.w3.org/2000/svg">
+    <!-- 渐变定义 -->
+    <defs>
+        <!-- 主背景渐变 -->
+        <linearGradient id="terminalGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#0d1117;stop-opacity:1" />
+            <stop offset="100%" style="stop-color:#161b22;stop-opacity:1" />
+        </linearGradient>
+        <!-- 光晕效果 -->
+        <radialGradient id="glowGradient" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
+            <stop offset="0%" style="stop-color:#58a6ff;stop-opacity:0.2" />
+            <stop offset="100%" style="stop-color:#58a6ff;stop-opacity:0" />
+        </radialGradient>
+    </defs>
+    
+    <!-- 背景光晕 -->
+    <circle cx="100" cy="100" r="80" fill="url(#glowGradient)" />
+    
+    <!-- 主终端窗口 -->
+    <g transform="translate(40, 60)">
+        <!-- 窗口背景 -->
+        <rect x="0" y="0" width="120" height="80" rx="10" 
+              fill="url(#terminalGradient)"
+              filter="drop-shadow(0 4px 20px rgba(0, 0, 0, 0.3))" />
+        
+        <!-- 装饰元素：极简风格的点 -->
+        <circle cx="15" cy="15" r="3" fill="#ff5f57" opacity="0.8" />
+        <circle cx="30" cy="15" r="3" fill="#febc2e" opacity="0.8" />
+        <circle cx="45" cy="15" r="3" fill="#28c840" opacity="0.8" />
+        
+        <!-- 路径展示：使用更现代的排版 -->
+        <g transform="translate(15, 35)">
+            <!-- 原路径 -->
+            <text font-family="SF Mono, Monaco, monospace" font-size="11" fill="#6e7681">
+                ~/workspace/project
+            </text>
+            
+            <!-- 转换箭头：设计感更强的箭头 -->
+            <path d="M0 15 L90 15" stroke="#58a6ff" stroke-width="1" opacity="0.3" />
+            <path d="M85 11 L90 15 L85 19" stroke="#58a6ff" stroke-width="1" fill="none" />
+            
+            <!-- 相对路径：突出显示 -->
+            <text font-family="SF Mono, Monaco, monospace" font-size="13" fill="#58a6ff" y="30">
+                ./project
+            </text>
+        </g>
+    </g>
+    
+    <!-- 装饰性几何元素 -->
+    <g opacity="0.1" stroke="#58a6ff">
+        <path d="M30 40 L20 40" />
+        <path d="M180 160 L170 160" />
+        <circle cx="25" cy="40" r="2" fill="none" />
+        <circle cx="175" cy="160" r="2" fill="none" />
+    </g>
+</svg>
