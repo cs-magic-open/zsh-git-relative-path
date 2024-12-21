@@ -5,6 +5,7 @@
   "main": "zsh-git-relative-path.plugin.zsh",
   "scripts": {
     "postinstall": "node scripts/postinstall.js",
+    "preuninstall": "node scripts/preuninstall.js",
     "postversion": "git push && git push --tags"
   },
   "bin": {
@@ -13,7 +14,7 @@
   "preferGlobal": true,
   "files": [
     "zsh-git-relative-path.plugin.zsh",
-    "scripts/postinstall.js",
+    "scripts/",
     "README.md",
     "LICENSE"
   ],
