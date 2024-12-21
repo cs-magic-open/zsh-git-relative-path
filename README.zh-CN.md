@@ -1,7 +1,7 @@
 # Zsh Git 相对路径插件
 
 <p align="center">
-  <img src="logo.v4.svg" width="200" height="200" alt="Zsh Git Relative Path Plugin Logo">
+  <img src="assets/logo.v4.svg" width="60%" height="60%" alt="Zsh Git Relative Path Plugin Logo">
 </p>
 
 一个简单但实用的 Zsh 插件，它可以在你的命令提示符中显示相对于 Git 项目根目录的当前路径。这个插件是在 AI 的协助下在短短 10 分钟内完成的，展示了 AI 辅助开发的强大能力。
