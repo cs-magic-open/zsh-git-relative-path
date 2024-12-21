@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="200" height="200" viewBox="0 0 200 200" version="1.1" xmlns="http://www.w3.org/2000/svg">
+    <!-- 背景圆形 -->
+    <circle cx="100" cy="100" r="90" fill="#2B3137"/>
+    
+    <!-- 终端窗口框架 -->
+    <rect x="40" y="40" width="120" height="80" rx="5" fill="#1E1E1E"/>
+    <rect x="40" y="40" width="120" height="20" rx="5" fill="#383838"/>
+    
+    <!-- 终端按钮 -->
+    <circle cx="55" cy="50" r="3" fill="#FF5F56"/>
+    <circle cx="65" cy="50" r="3" fill="#FFBD2E"/>
+    <circle cx="75" cy="50" r="3" fill="#27C93F"/>
+    
+    <!-- Git 图标 -->
+    <path d="M160 140 L140 140 L150 120 Z" fill="#F05133"/>
+    
+    <!-- 路径文本 -->
+    <text x="50" y="85" font-family="Monaco, monospace" font-size="12" fill="#27C93F">
+        <tspan x="50" dy="0">~/long/path ➜</tspan>
+        <tspan x="50" dy="15">./project ✓</tspan>
+    </text>
+    
+    <!-- 箭头指示相对路径转换 -->
+    <path d="M100 95 L120 95 L115 90 M120 95 L115 100" stroke="#4A9EFF" stroke-width="2" fill="none"/>
+</svg>
