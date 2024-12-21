@@ -10,17 +10,23 @@ A ZSH plugin that shows your current path relative to the git project root in yo
 - Special support for popular themes (robbyrussell, agnoster, avit)
 - Zero configuration needed!
 
+## Prerequisites
+
+- [Oh My Zsh](https://ohmyz.sh/)
+- Node.js >= 14.0.0
+- npm or pnpm
+
 ## Installation
 
-### One-line Installation
+### Using npm (Recommended)
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/cs-magic-open/zsh-git-relative-path/main/install.sh | bash && source ~/.zshrc
+npm install -g @cs-magic-open/zsh-git-relative-path
 ```
 
-That's it! No additional steps needed.
+That's it! The plugin will be automatically configured and activated after installation.
 
-### Alternative: Local Installation
+### Alternative: Manual Installation
 
 If you prefer to inspect the code first:
 
@@ -29,8 +35,8 @@ If you prefer to inspect the code first:
 git clone https://github.com/cs-magic-open/zsh-git-relative-path
 cd zsh-git-relative-path
 
-# 2. Run the installer
-bash install.sh && source ~/.zshrc
+# 2. Install globally from local
+npm install -g .
 ```
 
 ## Usage
@@ -46,12 +52,37 @@ username ~/projects/my-project/src/components $
 username src/components $
 ```
 
+## Updating
+
+To update to the latest version:
+
+```bash
+npm update -g @cs-magic-open/zsh-git-relative-path
+```
+
 ## Uninstallation
 
 ```bash
-rm -rf ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-git-relative-path
+npm uninstall -g @cs-magic-open/zsh-git-relative-path
 ```
-Then manually remove the plugin from the plugins list in your .zshrc.
+
+## Development
+
+To contribute or modify the plugin:
+
+```bash
+# Clone the repository
+git clone https://github.com/cs-magic-open/zsh-git-relative-path
+cd zsh-git-relative-path
+
+# Install dependencies
+npm install
+
+# Make your changes...
+
+# Bump version
+npm version patch  # or minor/major
+```
 
 ## License
 
