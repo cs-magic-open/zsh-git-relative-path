@@ -1,6 +1,6 @@
 {
   "name": "@cs-magic-open/zsh-git-relative-path",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "A ZSH plugin that shows your current path relative to the git project root in your prompt",
   "main": "zsh-git-relative-path.plugin.zsh",
   "scripts": {
