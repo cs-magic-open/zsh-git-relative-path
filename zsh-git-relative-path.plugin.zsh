@@ -1,5 +1,18 @@
 # zsh-vscode-path.plugin.zsh
 
+# Load version from package.json
+function get_plugin_version() {
+  local json_file="${0:A:h}/package.json"
+  if [[ -f "$json_file" ]]; then
+    echo $(cat "$json_file" | grep -o '"version": "[^"]*"' | cut -d'"' -f4)
+  else
+    echo "unknown"
+  fi
+}
+
+ZSH_GIT_RELATIVE_PATH_VERSION=$(get_plugin_version)
+ZSH_GIT_RELATIVE_PATH_REPO="https://github.com/cs-magic-open/zsh-git-relative-path"
+
 # 定义获取 vscode 相对路径的函数
 function get_vscode_relative_path() {
   local workspace_root=$(git rev-parse --show-toplevel 2>/dev/null)
@@ -12,6 +25,25 @@ function get_vscode_relative_path() {
     echo $path_format
   fi
 }
+
+# 检查更新函数
+function check_git_relative_path_update() {
+  if [[ -n "$ZSH_GIT_RELATIVE_PATH_REPO" ]]; then
+    # 获取远程版本信息
+    local latest_version=$(curl -s "$ZSH_GIT_RELATIVE_PATH_REPO/raw/main/package.json" | grep -o '"version": "[^"]*"' | cut -d'"' -f4)
+    if [[ -n "$latest_version" && "$latest_version" != "$ZSH_GIT_RELATIVE_PATH_VERSION" ]]; then
+      echo "\033[0;33mA new version ($latest_version) of zsh-git-relative-path is available!\033[0m"
+      echo "Current version: $ZSH_GIT_RELATIVE_PATH_VERSION"
+      echo "Update with: curl -fsSL $ZSH_GIT_RELATIVE_PATH_REPO/raw/main/install.sh | bash"
+    fi
+  fi
+}
+
+# 每天检查一次更新
+if [[ ! -f "${ZSH_CACHE_DIR:-$ZSH/cache}/git_relative_path_update" || $(find "${ZSH_CACHE_DIR:-$ZSH/cache}/git_relative_path_update" -mtime +1) ]]; then
+  check_git_relative_path_update &>/dev/null &!
+  touch "${ZSH_CACHE_DIR:-$ZSH/cache}/git_relative_path_update"
+fi
 
 # 保存原始的 prompt_subst 设置
 if [[ -z $original_prompt_subst ]]; then

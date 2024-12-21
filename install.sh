@@ -28,6 +28,7 @@ mkdir -p "$PLUGIN_DIR"
 
 # 复制插件文件
 cp "$(dirname "$0")/zsh-git-relative-path.plugin.zsh" "$PLUGIN_DIR/"
+cp "$(dirname "$0")/version.zsh" "$PLUGIN_DIR/"
 cp "$(dirname "$0")/README.md" "$PLUGIN_DIR/"
 cp "$(dirname "$0")/LICENSE" "$PLUGIN_DIR/"
 
@@ -45,5 +46,7 @@ else
     fi
 fi
 
-echo -e "${GREEN}Installation complete!${NC}"
+# 显示版本信息
+source "$(dirname "$0")/version.zsh"
+echo -e "${GREEN}Installation complete! Version: $ZSH_GIT_RELATIVE_PATH_VERSION${NC}"
 echo -e "Please run: ${BLUE}source ~/.zshrc${NC} to activate the plugin"
